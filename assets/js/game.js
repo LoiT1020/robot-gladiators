@@ -90,6 +90,7 @@ for (var i = 0; i < enemyInfo.length; i++) {
     // let player know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
     window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
 
+
     // pick new enemy to fight based on the index of the enemy.names array
     var pickedEnemyObj = enemyInfo[i];
 
@@ -178,8 +179,23 @@ switch (shopOptionPrompt) {
   }
   };
 
+  // function to set name
+    var getPlayerName = function() {
+    var name = "";
+    while (name === "" || name === null) {
+        name = prompt("What is your robot's name?");
+      };
+  
+  // ***************************************
+  // ADD LOOP HERE WITH PROMPT AND CONDITION
+  // ***************************************
+  
+    console.log("Your robot's name is " + name);
+    return name;
+      
+  };
   var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
@@ -213,7 +229,10 @@ switch (shopOptionPrompt) {
 
 
 // You can also log multiple values at once like this
-console.log(playerInfo.name,playerInfo.health,playerInfo.attack,playerInfo.money);
+console.log(playerInfo.name);
+console.log(playerInfo.health);
+console.log(playerInfo.attack);
+console.log(playerInfo.money);
 
 var enemyInfo = [
     {
