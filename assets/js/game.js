@@ -13,14 +13,9 @@ var randomNumber = function(min,max) {
   };
   
 
-/*for (var i=0;i<enemy.names.length;i++){
-    console.log(enemy.names[i],enemy.health[i],enemy.attack[i]);
-}*/
-
 
 // create function
 var fight = function(enemy) {
-    console.log(enemy);
     while (playerInfo.health > 0 && enemy.health > 0) {
       // ask player if they'd like to fight or run
       var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
@@ -34,12 +29,8 @@ var fight = function(enemy) {
         if (confirmSkip) {
           window.alert(playerInfo.name + ' has decided to skip this fight. Goodbye!');
           // subtract money from playerInfo.money for skipping
-          playerInfo.money = Math.max(0, playerInfo.money - 10);;
-          if (playerInfo.money < 0) {
-            playerInfo.money = 0;
-          }
-          else {
-              console.log("Player money:"+ playerInfo.money + "gold");}
+          playerInfo.money = Math.max(0, playerInfo.money - 10);
+              console.log("Player money:"+ playerInfo.money + "gold");
           break;
         }
       }
@@ -141,6 +132,7 @@ var endGame = function() {
     else  {
         window.alert("You've lost your robot in battle.");
       };
+      //want to play again question
         var playAgainConfirm = window.confirm("Would you like to play again?");
 
     if (playAgainConfirm) {
@@ -237,5 +229,10 @@ var enemyInfo = [
       attack: randomNumber(10, 14)
     }
   ];
+
+console.log(enemyInfo);
+console.log(enemyInfo[0]);
+console.log(enemyInfo[0].name);
+console.log(enemyInfo[0]['attack']);
 // start the game when the page loads
 startGame();
